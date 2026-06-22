@@ -21,6 +21,13 @@ include:
   - board: nice_nano//zmk
     shield: hillside46_right
 
+  # Reset Firmware
+  #   Uncomment below lines to build reset firmware for nice_nano board.
+  #   This can be used to reset the board to bootloader mode.
+  #   See: https://zmk.dev/docs/firmware/bootloader-flash#reset-firmware
+  - board: nice_nano//zmk
+    shield: settings_reset
+
 # Hillside 48
 #   Comment out below if you do not have this board, to save build time
   # - board: nice_nano
