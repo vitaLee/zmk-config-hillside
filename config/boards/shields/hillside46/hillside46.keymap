@@ -29,6 +29,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        display-name = "QWERTY";
 /* QWERTY
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
@@ -47,6 +48,7 @@
                 };
 		
                 dvorak_layer {
+                        display-name = "Dvorak";
 /* DVORAK
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   '   |   ,   |   .   |   P   |   Y   |-----------------------------------|   F   |   G   |   C   |   R   |   L   | BKSPC |
@@ -65,6 +67,7 @@
                 };
 		
                 colemak_layer {
+                        display-name = "Colemak";
 /* COLEMAK-DH
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | BKSPC |
@@ -83,6 +86,7 @@
                 };
 		
                 nav_layer {
+                        display-name = "Nav";
 /* NAV   
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
@@ -101,6 +105,7 @@
                 };
 
                 sym_layer {
+                        display-name = "Sym";
 /* SYM
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | INS   |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | BSPC  |
@@ -119,21 +124,30 @@
                 };
 		
                 adj_layer {
+                        display-name = "Adjust";
 /* ADJUST
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |       | QWERTY| DVORAK| COLEMK|       |       |-----------------------------------|       |  F11  |  F12  |Prt Scr|EP_OFF | EP_ON |
  * | RESET | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |       |       |       |       | RESET |
- * |       | LGUI  | LALT  | LCTRL | LSHIFT|       |BT CLR |-------------------|       |       |       |OUT_USB|OUT_BLE|       | BOOTL |
+ * |       | LGUI  | LALT  | LCTRL | LSHIFT|       |BT CLR |-------------------|       |       |       |OUT_USB|OUT_BLE|STUDIO | BOOTL |
  *                                 |       |       |       |       |---|       |       |       |       |
  */
                         bindings = <
 &none         &to  QWERTY_L &to  DVORAK_L &to  COLEMK_L &none         &none                                                                             &none             &kp   F11          &kp   F12  &kp PRINTSCREEN   &ext_power EP_OFF  &ext_power EP_ON
 &reset        &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                                                     &none             &none              &none            &none          &none           &reset
-&none         &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp LSHIFT    &none         &bt BT_CLR                                         &none            &none             &none              &out  OUT_USB    &out  OUT_BLE  &none           &bootloader
+&none         &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp LSHIFT    &none         &bt BT_CLR                                         &none            &none             &none              &out  OUT_USB    &out  OUT_BLE  &studio_unlock  &bootloader
                                                         &trans        &trans        &trans        &trans                 &trans        &trans           &trans            &trans 
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+                };
+
+                extra1 {
+                        status = "reserved";
+                };
+
+                extra2 {
+                        status = "reserved";
                 };
         };
 };
